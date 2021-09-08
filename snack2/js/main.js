@@ -58,15 +58,21 @@ var arrZucchine = [
 
 var arrZucchineMeno = [];
 var arrZucchinePiu = [];
+var pesoZucchineMeno = 0;
+var pesoZucchinePiu = 0;
 
 for (var i=0; i<arrZucchine.length; i++){
     console.log(arrZucchine[i].lunghezza);
     if (arrZucchine[i].lunghezza < 15){
         arrZucchineMeno.push(arrZucchine[i]);
+        pesoZucchineMeno += arrZucchine[i].peso;
     } else {
         arrZucchinePiu.push(arrZucchine[i]);
+        pesoZucchinePiu += arrZucchine[i].peso;
     }
 }
 
 console.log(arrZucchineMeno);
+console.log(`peso totale zucchine corte: ${pesoZucchineMeno}g`)
 console.log(arrZucchinePiu);
+console.log(`peso totale zucchine lunghe: ${pesoZucchinePiu}g`)
