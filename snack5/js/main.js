@@ -7,14 +7,40 @@
 // funzione(array, a(<b) , b>=(array))
 // la funzione ritorna un nuovo array con i valori che hanno la posione compresa tra a e b
 
-var array5 = [1,2,3,4,5]
-var num1 = 2
-var num2 = 4
-
-
-function newArray(arr, x , y){
-    var newArray=[];
-    // for (var i =0; i<arr.length; i++){
-
-    // }
+// funzione
+function arrayOfXY(arr, x , y){
+    newArray = [];
+        for (var i=0; i<arr.length; i++){
+            if (i >= x && i<=y){
+                newArray.push(arr[i]);
+            }
+        }
+    
+    return newArray;
 }
+
+
+
+var array5 = [1,2,3,4,5,6,7,8,9,10]
+var num1 = parseInt(prompt("inserisci un numero da 1 a" + array5.length));
+var num2 = parseInt(prompt("inserisci un numero da 1 a" + array5.length));
+
+
+
+while(isNaN(num2) || num2 > array5.length){
+    num2 = parseInt(prompt("il valore inserito non è corretto"));
+}
+while(isNaN(num1) || num1 > num2 || num1>array5.length){
+    num1 = parseInt(prompt("attento non hai inserito il numero correttamente"));
+}
+arrayOfXY(array5 , num1 , num2);
+console.log(newArray);
+
+
+
+
+
+
+// arrayOfXY(array5,num1,num2);
+// console.log(newArray);
+
